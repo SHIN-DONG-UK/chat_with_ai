@@ -1,8 +1,10 @@
-## 1. 프로젝트 구조
-이렇게 되어야 합니다.
+# Chat with ai
 
+목소리를 **Few-Shot Learning**할 수 있는 **Melo TTS** 실습 GUI 프로그램과, **OpenAI API**를 사용해 query에 대한 응답을 음성으로 재생하는 GUI 프로그램입니다.
+
+## 1. 폴더 구조
 ```
-chat_with_danaka/
+chat_with_ai/
 ├── checkpoints_v2       # pre-trained model
 ├── gui/                 # GUI 관련 모듈
 │   ├── __init__.py      
@@ -23,31 +25,10 @@ chat_with_danaka/
 
 우분투 22.04에서 개발되었습니다.
 
-### 2.0 git clone
+### 2.1 git clone
 ```bash
-git clone https://github.com/SHIN-DONG-UK/chat_with_danaka.git
-cd chat_with_danaka
-```
-
-### 2.1 Python 설치
-
-우분투 22.04의 기본 Python 버전은 3.10입니다.
-
-Python 3.9가 설치되어 있는지 확인하고, 없으면 설치해야 합니다.
-
-### Python 3.9 설치:
-
-```bash
-sudo apt update
-sudo apt install python3.9 python3.9-venv
-```
-
-- python3.9로 가상환경 만들기 위해서 python3.9-venv를 깔아야 함
-
-### 설치 확인:
-
-```bash
-python3.9 --version
+git clone https://github.com/SHIN-DONG-UK/chat_with_ai.git
+cd chat_with_ai
 ```
 
 ### 2.2 가상환경
@@ -55,13 +36,13 @@ python3.9 --version
 - 가상환경 만들기
 
 ```bash
-python3.9 -m venv [가상환경 이름]
+python -m venv [가상환경 이름]
 ```
 
 - 가상환경 실행
 
 ```bash
-source venv/bin/activate
+source [가상환경 이름]/bin/activate
 ```
 
 ### 2.3 OpenVoice 관련 환경 설정
@@ -72,21 +53,12 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-- pre-trained model 다운로드
+- <a href="https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip">pre-trained model 다운로드</a>
 
-<a href="https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_v2_0417.zip">여기 누르쇼</a>
 
-위 프로젝트 구조처럼 project 안에 압축을 풀어주면 됩니다.
+폴더 구조대로 압축을 풀어야 합니다.
 
-### 2.4 CUDA 관련 설정
-
-이거는 그냥 ubuntu 설치할 때 third-party 설정해서 깔았습니다.
-
-만약 이렇게 깔지 않았으면 알아서 CUDA 관련 깔아야 합니다.
-
-CUDA는 하드웨어 환경에 맞는 드라이브 버전 설치해야 함
-
-그건 검색해서 알아서 하쇼
+### 2.4 CUDA 필요
 
 - CUDA 동작 확인
 
@@ -95,7 +67,7 @@ import torch
 print(torch.cuda.is_available())
 ```
 
-`True`라고 뜨면 됩니다
+`True`를 확인
 
 
 ### 2.5 Melo TTS 설치
