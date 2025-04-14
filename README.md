@@ -1,6 +1,7 @@
 # Chat with ai
 
-목소리를 **Few-Shot Learning**할 수 있는 **Melo TTS** 실습 GUI 프로그램과, **OpenAI API**를 사용해 query에 대한 응답을 음성으로 재생하는 GUI 프로그램입니다.
+목소리를 **Few-Shot Learning**할 수 있는 **Melo TTS** 실습 GUI 프로그램과,  
+**OpenAI API**를 사용해 query에 대한 응답을 음성으로 재생하는 GUI 프로그램입니다.
 
 ## 1. 폴더 구조
 ```
